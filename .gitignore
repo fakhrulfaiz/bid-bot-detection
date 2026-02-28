@@ -5,6 +5,7 @@ data/**
 !data/**/.gitkeep
 !data/**/*.dvc
 .env
+config/service-key/
 
 # Python cache
 __pycache__/
