@@ -1,0 +1,5 @@
+outs:
+- md5: 6da77d94b8ca431b6c6b84f81f341aed
+  size: 925182390
+  hash: md5
+  path: bids.csv
