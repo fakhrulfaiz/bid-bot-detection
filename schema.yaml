@@ -1,0 +1,13 @@
+COLUMNS:
+  mean_time_diff: float64
+  total_bids: int64
+  total_auctions: int64
+  bids_per_auction: float64
+  mean_response: float64
+  min_response: float64
+  ip_entropy: float64
+  url_entropy: float64
+  outcome: float64
+
+TARGET_COLUMN:
+  name: outcome

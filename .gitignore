@@ -6,7 +6,8 @@ data/**
 !data/**/*.dvc
 .env
 config/service-key/
-
+logs/
+artifacts/
 # Python cache
 __pycache__/
 *.py[cod]
