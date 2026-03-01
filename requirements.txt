@@ -1,4 +1,4 @@
-pandas 
+pandas
 mlflow
 notebook
 numpy
@@ -10,10 +10,11 @@ tqdm
 ensure
 joblib
 types-PyYAML
-mlflow
 python-dotenv
-torch
 ipykernel
 seaborn
 dvc
 dvc-gdrive
+xgboost
+fastapi[standard]
+python-multipart

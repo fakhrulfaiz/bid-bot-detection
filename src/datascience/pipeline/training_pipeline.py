@@ -6,12 +6,13 @@ from src.datascience.pipeline.stage_04_model_evaluation import ModelEvaluationPi
 
 
 STAGES = [
-    ("Data Transformation",  DataTransformationPipeline),
-    ("Model Training",       ModelTrainerPipeline),
-    ("Model Evaluation",     ModelEvaluationPipeline),
+    ("Data Transformation", DataTransformationPipeline),
+    ("Model Training",      ModelTrainerPipeline),
+    ("Model Evaluation",    ModelEvaluationPipeline),
 ]
 
-if __name__ == "__main__":
+
+def run():
     for stage_name, PipelineClass in STAGES:
         try:
             logger.info(f">>>>>> Stage: {stage_name} started <<<<<<")
@@ -19,3 +20,7 @@ if __name__ == "__main__":
             logger.info(f">>>>>> Stage: {stage_name} completed <<<<<<\n\nx==========x")
         except Exception as e:
             raise BidBotException(e, sys)
+
+
+if __name__ == "__main__":
+    run()
