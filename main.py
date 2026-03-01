@@ -1,4 +1,6 @@
-from src.datascience.pipeline.training_pipeline import run
+import subprocess
+import sys
 
 if __name__ == "__main__":
-    run()
+    result = subprocess.run(["dvc", "repro"], check=False)
+    sys.exit(result.returncode)

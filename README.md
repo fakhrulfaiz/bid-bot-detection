@@ -120,10 +120,24 @@ Without a `.env`, MLflow logs to a local `mlruns/` directory automatically.
 Run the full pipeline (data transformation → model training → evaluation):
 
 ```bash
+dvc repro
+# or equivalently:
 python main.py
 ```
 
-This regenerates all artifacts in `artifacts/`. Takes ~5 minutes (7.6M bid rows).
+DVC only re-runs stages whose dependencies changed. If only `params.yaml` changed, it skips the 5-minute data transformation and re-runs model training and evaluation only.
+
+### Sync data and artifacts with Google Drive
+
+```bash
+# Push local cache (data + artifacts) to GDrive
+dvc push
+
+# Pull on a new machine (gets data + artifacts)
+dvc pull
+```
+
+Raw data files (`train.csv`, `test.csv`, `bids.csv`) and all pipeline artifacts (`preprocessor.joblib`, `model.joblib`, etc.) are stored on Google Drive. Only the small `.dvc` pointer files and `dvc.lock` are committed to git.
 
 ---
 

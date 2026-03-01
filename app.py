@@ -77,9 +77,8 @@ async def predict(file: UploadFile = File(...)):
 
 @app.get("/train")
 async def train():
-    try:
-        from src.datascience.pipeline.training_pipeline import run
-        run()
-        return "Training complete."
-    except Exception as exc:
-        return f"Training failed: {exc}"
+    import subprocess
+    result = subprocess.run(["dvc", "repro"], capture_output=True, text=True)
+    if result.returncode == 0:
+        return f"Training complete. {result.stdout.strip()}"
+    return f"Training failed: {result.stderr.strip()}"
